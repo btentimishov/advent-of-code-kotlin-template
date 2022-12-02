@@ -2,23 +2,6 @@ import kotlin.math.max
 
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
-    }
-
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
-
-    // test if implementation meets criteria from the description, like:
-//    val testInput = readInput("Day01_test")
-//    check(part1(testInput) == 1)
-
-    val input = readInput("Day01")
-
-
-    //to find the max
-
-    fun findMax() {
         var max = 0
         var sum = 0
         for (num in input) {
@@ -29,10 +12,11 @@ fun main() {
                 sum += num.toInt()
             }
         }
-        println(max)
+        println("Max score is : $max")
+        return max
     }
 
-    fun findSumOfThreeMax() {
+    fun part2(input: List<String>): Int {
         var sum = 0
         val arr: MutableList<Int> = mutableListOf()
         for (num in input) {
@@ -53,12 +37,11 @@ fun main() {
             i--
         }
 
-        println(result)
+        println("Sum of three max scores is : $result")
+        return result
     }
 
-    findSumOfThreeMax()
-
-
-//    println(part1(input))
-//    println(part2(input))
+    val input = readInput("Day01")
+    println(part1(input))
+    println(part2(input))
 }
